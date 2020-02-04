@@ -1,0 +1,36 @@
+<div class="col">
+	{{#each componentes}}	
+	<div class="lista">
+		<div class="separa">
+			<div class= "card-body">
+				<p> nombre: {{nombre}}</p>
+				<p> Descripcion: {{descripcion}} </p> 
+
+				<p><img class="imageFile" src="/uploads/{{filename}}" alt="{{nombre}}"></p>
+
+				<form action="/componentes/delete/{{_id}}?_method=DELETE" method="POST">
+					<input type="hidden" name="_method" value="DELETE">
+					<button class="btnDelete" type="submit">
+						Delete
+					</button>
+				</form>
+				<form action="/componentes/{{_id}}/commentR">
+					<button class="btnDelete" type="submit">
+						Comment
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	{{else}}
+		<div class="mx-auto"
+			<div class = "card-body">
+				<h1> Hola {{user.nombre}} </h1>
+				<p class="lead"> No hay componentes aun </p>
+				<!--Con esto lo mandamos al formulario de agregar notas (porque no hay actualmente) -->
+				<a href="/componentes/add" class="btn btn-success"> Agrega un nuevo componente! </a>
+			</div>
+		</div>
+	{{/each}}
+</div>

@@ -1,0 +1,35 @@
+<h2> Componentes</h2>
+<form action="/search" method="GET">
+	<label> Busca un componente </label>
+	<input type="text" name="nombre" value="{{SearchOptions.nombre}}">
+	<button class="btnDelete" type="submit"> Search </button>
+</form>
+
+{{#each busquedas}}
+	<div class="lista">
+		<div class="separa">
+			<div class= "card-body">
+				<h4 class="card-title d-flex justify-content-between align-items-center">
+					{{title}} <a href="/componentes/editar/{{_id}}"><i class="fas fa-edit"></i></a>
+				</h4>
+				<p> Nombre: {{nombre}} </p>
+				<p> Descripcion: {{descripcion}} </p>
+				<img class="imageFile" src="/uploads/{{filename}}" alt="{{title}}">
+				
+				<form action="/componentes/{{_id}}/comentar">
+					<button class="btnDelete" type="submit">
+						Comment
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	{{else}}
+		<div class="mx-auto"
+			<div class = "card-body">
+				<h3> Componente no encontrado! </h3>
+			</div>
+		</div>
+{{/each}}
+

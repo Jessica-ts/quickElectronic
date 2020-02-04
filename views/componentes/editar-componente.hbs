@@ -1,0 +1,31 @@
+<div class="col-md-4 mx-auto">
+	<div class="card">
+		<div class="card-header">
+			<h3> Edita un componente </h3>
+		</div>
+		<div class="card-body">
+			<form action="/componentes/editar-componente/{{componente._id}}?_method=PUT" method="POST">
+				<input type="hidden" name="_method" value="PUT">
+				<div class="form-group">
+					<input type="text" name="nombre" class="form-control" placeholder="nombre" value="{{Componente.nombre}}">
+				</div>
+				<div class="form-group">
+					<textarea name="descripcion" class="form-control">
+						{{Componente.descripcion}}
+					</textarea>
+				</div>
+				
+				
+				<div class="form-group">
+					<button class="btn btn-primary btn-block" type="submit">
+						Save
+					</button>
+					<br>
+					<div class="form-group">
+						<a href="/componentes" class="btn btn-primary btn-block">Cancel</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
